@@ -1,0 +1,54 @@
+
+
+	//INSERTION SORT
+package yes;
+import java.util.*;
+public class InsertionSort {
+
+		public static void main(String[] args) {
+			Scanner scn=new Scanner(System.in);
+			int n=scn.nextInt();
+			int a[]=new int[n];
+			for(int i=0;i<n;i++){
+			    a[i]=scn.nextInt();
+			    }
+		
+			insertionSort(a);
+			print(a);
+		}
+		public static void insertionSort(int a[]) {
+			for(int i=1;i<a.length;i++) {
+				for(int j=i-1;j>=0;j--) {
+					if(isGreater(a,j,j+1)==true) {
+						swap(a,j,j+1);
+					}
+					else {
+						break;
+					}
+				}
+			}
+				}
+		//swapping
+		public static void swap(int a[],int i, int j) {
+			System.out.println("swapping"+a[i]+"and"+a[j]);
+			int temp= a[i];
+			a[i]=a[j];
+			a[j]=temp;
+			}
+		//comparsion 
+		public static boolean isGreater(int a[],int i,int j) {
+			System.out.println("comparing"+a[i]+"and"+a[j]);
+			if(a[j]>a[i]) {
+				return true;
+			}
+			else {
+				return false;
+		
+			}
+			}
+		public static void print(int a[]) {
+			for(int i=0;i<a.length;i++) {
+				System.out.println(a[i]);
+			}
+		}
+}
